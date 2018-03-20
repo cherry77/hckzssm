@@ -1,0 +1,200 @@
+
+.getFocus_outerInput{
+	border:1px solid #fe9900 !important;
+}
+.chooseOK{
+	background-color:#fe9900 !important;
+	color:#ffffff !important;
+}
+.chooseOK input{
+	color:#ffffff !important;
+}
+.chooseOK span{
+	color:#ffffff !important;
+}
+.chooseOK i{
+	color:#ffffff !important;
+}
+/*日历最外层div*/
+.ued_date_list {
+	position: absolute;
+	border: 1px solid #dbdbdb;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: block;
+	background-color:#fff;
+	z-index:9999999;
+}
+
+/*日历div*/
+.ued_subdate_list {
+	width: 245px;
+	float: left;
+	position: relative;
+}
+
+/*日历div内部head*/
+.ued_subdate_list .ued_subdate_list_head {
+	background-color: #f3f3f3;   
+	height: 26px;
+	width: 236px;
+	margin-bottom:5px;
+}
+/*head内部切换按钮*/
+#ued_datePicker_leftBtn {
+	float:left;	
+	left:10px;
+}
+#ued_datePicker_rightBtn {
+	float:right;
+	right:10px;
+}
+.ued_toggleBtn{
+	top:0px;
+	position:absolute; 
+	cursor: pointer;
+	font-family: Geneva;
+	font-size:20px;
+}
+/*日历div内部head内部年月*/
+.ued_subdate_list .ued_subdate_list_head .yymm{
+	padding:0;
+	margin:0;
+	font-size: 14px;
+	line-height: 26px;
+	text-align:center;
+	color: #666666;
+	font-family: Verdana;
+	display:block;
+}
+#yymm0{
+	float:left;
+	padding-left:90px;
+}
+#yymm1{
+	float:right;
+	padding-right:90px;
+}
+/*日历div内部主体*/
+.ued_subdate_list .ued_subdate_list_main {
+	width: 245px;
+}
+
+.ued_subdate_list_main table {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-color: gray;
+}
+
+.ued_subdate_list_main tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+.ued_subdate_list_main th {
+	height: 22px;
+	font-weight: normal;
+	line-height: 22px;
+	color: #666;
+}
+
+.ued_subdate_list table td {
+	height: 25px;
+	line-height: 25px;
+	font-family: Verdana;
+}
+/*已过去的天数*/
+.ued_subdate_list table td.ued_date_disabled{
+	color:#d1d1d1;
+	cursor:not-allowed;
+}
+/*非本月的日子*/
+.ued_subdate_list table td.ued_not_thisMonth{
+	color:#d1d1d1;
+	//cursor:not-allowed;
+}
+.ued_subdate_list table td.todayFocus{
+	color:#ff0000;
+}
+.ued_subdate_list td, th {
+	display: table-cell;
+	vertical-align: inherit;
+}
+
+.ued_subdate_list h3, .ued_subdate_list table tr td, .ued_subdate_list tr th {
+	font-size: 12px;
+	text-align: center;
+	background: none;
+}
+.ued_subdate_list table tr td{
+	color:#777777;
+	//cursor: pointer;
+}
+.ued_subdate_list table tr td.beginDay{
+	color:#fff;
+	background: url(../images/date_curbg.png) no-repeat;
+	background-position:right;
+}
+.ued_subdate_list table tr td.endDay{
+	color:#fff;
+	background: url(../images/date_curbg1.png) no-repeat;
+	background-position:left;
+}
+.ued_subdate_list table tr th{
+	padding-bottom:5px;
+}
+.ued_subdate_list table tr td.changeColor{
+	color:#666666;
+}
+.ued_subdate_list table tr td.ued_item_over{
+	background: url(../images/date_bg.png) no-repeat;
+	background-position:right;
+	cursor: pointer;
+}
+.ued_subdate_list table tr td.ued_item_over2{
+	background: url(../images/date_bg1.png) no-repeat;
+	background-position:left;
+	cursor: pointer;
+}
+.ued_subdate_list table tr td.choosedMiddle{
+	background-color: #f3f3f3;
+}
+
+/*日历div内部背景*/
+.monthBg {
+	position: absolute;
+	width: 180px;
+	height: 165px;
+	font-size: 130px;
+	font-family: Arial;
+	font-style: normal;
+	left: 0px;
+	color: #E2E2E2;
+	z-index: -1;
+	top: 20px;
+	line-height: 165px;
+	text-align: center;
+	padding: 0;
+}
+
+/*日历main与底部信息之前的清除浮动div*/
+.clearMainAndBottom{
+	clear: both;
+	height: 0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+
+/*底部信息内部文字*/
+.ued_date_bottomInfo span{
+	cursor: pointer;
+}
+
+/*周六日样式*/
+.ued_date_colorFulDay{
+	color: #d30006;
+}

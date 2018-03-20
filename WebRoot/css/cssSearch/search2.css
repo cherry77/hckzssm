@@ -1,0 +1,293 @@
+﻿/* CSS Document */
+.hotel_seabg ul li .inputbox span.city_ico,.hotel_searchlist ul li .inputbox span.city_ico,.browse_hotel ul li p.ri strong,.brand_sea ul li .inputbox span.sicon,.hotel_seabg ul li .inputbox span.date_ico,.city_input span.sicon,.recom_title span,.index_sea h1{background:url(../images/index/index_ico.jpg) 0 0 no-repeat;}
+.ensure_list dl dt,.landmark_list ul li strong,.hotel_seabg ul li.input_but strong,.hotel_seabg ul li.input_but input.but,.toolbox_list ul li,.index_sea ul li.input_but strong,.index_sea ul li.input_but input.but{background:url(../images/index/indexbg.jpg) 0 0 no-repeat;}
+/*棣栭〉start*/
+.container{ min-width:1180px;}
+.index_bannerbox{height:350px; overflow:hidden; width:100%;}
+.banner_pic{height:350px; overflow:hidden; width:100%;}
+.index_bannerbg{overflow:hidden; width:100%; height:350px;}
+.index_bannerpic{overflow:hidden; width:100%; height:350px;}
+.index_bannerpic ul{overflow:hidden; height:350px;}
+.index_bannerpic ul li{height:350px; width:100%; overflow:hidden;}
+.index_banner{position:relative; width:1180px; margin:0 auto;}
+.index_bannercon{overflow:hidden; height:350px; position:absolute; top:-350px;}
+.index_seabgbox{overflow:hidden; position:relative; padding-top:25px; width:530px; height:300px;}
+.index_seabg{width:520px; height:290px; padding:5px; background:#000; filter:alpha(Opacity=20); -moz-opacity:0.2; opacity:0.2;}
+.index_sea{background:#fff; width:500px; height:270px; padding:10px; position:absolute; left:5px; top:30px;}	
+.index_seatitle{overflow:hidden; border-bottom:#85d685 solid 1px; padding-bottom:5px; height:30px;}
+.index_sea h1{font-size:20px; font-weight:bold; color:#66cc66; padding:0px 0px 0px 40px; float:left; font-weight:normal; width:100px; background-position:15px -305px;}
+.index_sea span{display:block; width:290px; float:right; text-align:right; padding:10px 10px 0px 0px; color:#999;  }
+.index_sea span i{font-family:Arial, Helvetica, sans-serif; color:#f90; font-style:normal; padding:0px 3px;}
+.index_sea ul{overflow:hidden; border-top:#fff solid 1px; padding:20px 0px;}
+.index_sea ul li{overflow:hidden; padding-bottom:15px; height:36px;}
+.index_sea ul li label{width:55px; float:left; color:#666; padding-right:10px; height:36px; line-height:36px; text-align:right;}
+.index_sea ul li .inputbox{position:relative; width:390px; height:36px; float:left;}
+.index_sea ul li .inputbox input{width:368px; padding:0px 10px; height:34px; border:#e8e8e8 solid 1px; line-height:34px;}
+.datebox{width:368px; padding:4px 10px 2px; height:28px; border:#e8e8e8 solid 1px; float:left}
+.inputdate{width:282px; overflow:hidden; float:left;}
+.datebox strong{display:block; float:left; width:76px; padding:4px 10px 0px 0px; height:20px; line-height:18px; text-align:right; color:#666; font-size:14px; font-weight:normal;}
+.datebox strong i{font-family:Arial, Helvetica, sans-serif; font-style:normal; padding:0px 5px;}
+.index_sea ul li .inputbox input.text{color:#999;   font-size:12px;}
+.index_sea ul li .inputbox input.date{color:#b4b4b4; font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+.index_sea ul li .inputbox span.city_ico{display:block; position:absolute; right:10px; top:8px; background-position:-1px 0px; width:16px; height:20px;}
+.index_sea ul li .inputbox span.date_ico{display:block; position:absolute; right:10px; top:10px; background-position:0px -44px; width:16px; height:16px;}
+.index_sea ul li .in,.index_sea ul li .out{overflow:hidden; float:left; background:#f4f4f4; border:1px solid #e3e3e3; padding:2px;}
+.index_sea ul li .in span, .index_sea ul li .out span{ display:block; padding:1px 5px 0px 10px; width:25px; float:left;}
+.index_sea ul li .in input,.index_sea ul li .out input{width:78px; height:20px; line-height:20px; color:#666; font-family:Arial, Helvetica, sans-serif; float:left; background:none;}
+.index_sea ul li .out input{background-position:8px -314px;}
+.index_sea ul li p.line{display:block; float:left; padding:2px 10px; color:#979797;}
+.index_sea ul li span{color:#666; padding-left:20px;}
+.index_sea ul li span i{font-family:Arial, Helvetica, sans-serif; padding:0px 5px;}
+.index_sea ul li.input_but{overflow:hidden; float:right; width:250px; _width:270px; padding-right:40px; _padding-right:25px;}
+.index_sea ul li.input_but strong{background-position:-91px -252px; margin-right:10px; width:120px; height:36px; display:block; float:left; cursor:pointer;}
+.index_sea ul li.input_but input.but{background-position:-91px -316px; width:118px; height:36px; cursor:pointer;}
+.index_bannerri{ position:relative; width:1180px; margin:0 auto;}
+.index_bannerri ul{overflow:hidden; position:absolute; right:0px; top:-350px;}
+.index_bannerri ul li{width:185px; height:175px;}
+.index_bannerri ul li a{display:block; width:180px; height:175px; float:right; position:relative;}
+.index_bannerri ul li a:hover img{ left:-3px; position:absolute;}
+
+.banner_focus{ position:absolute; bottom:10px; right:180px; text-align:right; width:150px; overflow:hidden;}
+.banner_focus ol{ overflow:hidden; float:right;}
+.banner_focus ol li{width:12px; height:12px; background:url(../images/index/banner_ico.png) 0 0 no-repeat; padding-right:12px; cursor:pointer; float:left;}
+.banner_focus ol li.cur{background:url(../images/index/banner_icocur.png) 0 0 no-repeat;}
+/*-------------------------------------------------------------------*/
+.index_main{width:1180px; margin:0 auto; overflow:hidden;}
+/*涓诲唴瀹瑰乏渚tart*/
+.indexmain_le{width:885px; overflow:hidden; float:left;}
+/*鍦版爣鎵鹃厭搴梥tart*/
+.index_landmark{height:135px; overflow:hidden;}
+.period_special{overflow:hidden; margin-bottom:20px;}
+.landmark_title,.hot_hoteltitle,.item_hoteltitle,.special_title{border-bottom:#96daff solid 2px; position:relative; height:35px;}
+.landmark_title h3,.like_title h3,.hot_hoteltitle h3,.item_hoteltitle h3,.special_title h3{color:#54b8fd; font-size:20px; width:180px; padding-left:10px; float:left;}
+.landmark_title ul,.hot_hoteltitle ul,.item_hoteltitle ul{width:378px; float:right; position:absolute; right:80px; padding-top:8px;}
+.landmark_title ul{right:128px; width:380px;}
+.landmark_title ul li,.hot_hoteltitle ul li,.item_hoteltitle ul li{overflow:hidden; float:left; margin-right:10px; color:#666; }
+.landmark_title ul li a,.hot_hoteltitle ul li a,.item_hoteltitle ul li a{color:#666;   padding:1px 10px; display:block;}
+.landmark_title ul li a:hover,.hot_hoteltitle ul li a:hover,.item_hoteltitle ul li a:hover{color:#fff; text-decoration:none;}
+.landmark_title ul li.cur a,.landmark_title ul li a:hover{color:#fff; background:#96daff;  }
+.landmark_list{overflow:hidden; padding:10px 0px 0px;}
+.landmark_list ul{overflow:hidden; width:936px;}
+.landmark_list ul li{width:52px; float:left; padding:5px 0px 0px 12px; margin-right:53px; cursor:pointer;}
+.landmark_list ul li strong{display:block; cursor:pointer; width:46px; height:58px; padding-bottom:8px;}
+.landmark_list ul li strong.lm_ico1{background-position:-1px -1px;}
+.landmark_list ul li strong.lm_ico2{background-position:-110px -1px;}
+.landmark_list ul li strong.lm_ico3{background-position:-218px -1px;}
+.landmark_list ul li strong.lm_ico4{background-position:-321px -1px;}
+.landmark_list ul li strong.lm_ico5{background-position:-428px -1px;}
+.landmark_list ul li strong.lm_ico6{background-position:-538px -1px;}
+.landmark_list ul li strong.lm_ico7{background-position:-649px -1px;}
+.landmark_list ul li strong.lm_ico8{background-position:-753px -1px;}
+.landmark_list ul li span{display:block; color:#666; text-align:center;}
+.landmark_list ul li.cur span{color:#f90;}
+.city_input{ position:relative; margin-top:7px; float:right;}
+.city_input input{width:100px; height:18px; border:#e3e3e3 solid 1px; padding:0px 20px 0px 5px; color:#666; line-height:18px;}
+.city_input input.cur{border:#96daff solid 1px;}
+.city_input span.sicon{background-position:0px -166px; display:block; height:5px; position:absolute; right:6px; top:8px; width:9px; overflow:hidden; cursor:pointer;}
+.land_markpop,.pop_con,.pop_con p.index_close{width:883px !important;}
+/*鍦版爣鎵鹃厭搴梕nd*/
+/*鐚滀綘鍠滄start*/
+.like_hotel{height:322px; overflow:hidden; background:none;}
+.like_title,.special_title{border-bottom:#f90 solid 2px; height:35px;}
+.like_title h3,.special_title h3{color:#f90;}
+.like_title a{display:block; width:101px; height:14px; padding-right:10px; margin-top:12px; background:url(../images/index/bfd_logo_ch.gif) 0 1px no-repeat; float:right;}
+.like_title a:hover{background:url(../images/index/bfd_logo_ch.gif) 0 -13px no-repeat;}
+.like_list,.special_list{overflow:hidden; padding-top:15px; width:900px;}
+.like_list dl{width:210px; overflow:hidden; background:#fafafa; margin-right:15px; height:270px; float:left;}
+.like_list dl dt{width:210px; height:160px; overflow:hidden; padding-bottom:8px;}
+.like_list dl dt a{display:block; width:210px; height:160px;}
+.like_list dl dd{overflow:hidden; padding:4px 8px;}
+.like_list dl dd a{color:#666; font-size:14px; height:22px; overflow:hidden; display:block;}
+.like_list dl dd a:hover{color:#f60;}
+.like_list dl dd span{color:#999;   font-size:12px; height:18px; overflow:hidden; display:block;}
+.like_list dl dd p{width:110px; float:left; font-size:12px;}
+.like_list dl dd p i{color:#f60; font-size:12px;}
+.like_list dl dd p em{font-style:normal; color:#f60; font-size:26px; font-family:Arial, Helvetica, sans-serif; padding-right:2px;}
+.like_list dl dd p strong{ font-weight:normal; color:#666;   position:relative; top:-2px;}
+.like_list dl dd a.but{display:block; float:right; width:70px; height:24px; background:#f90; color:#fff; text-align:center; line-height:24px; margin-top:8px;}
+.like_list dl dd a.but:hover,.like_list dl dd a.butcur{ background:#66cc66;}
+/*鐚滀綘鍠滄end*/
+/*鐑棬閰掑簵start*/
+.hot_hotel,.item_hotel{height:382px;}
+.hot_hoteltitle{border-bottom:#66cc66 solid 2px;}
+.hot_hoteltitle h3{color:#3c9a2d;}
+.hot_hoteltitle ul li.cur a,.hot_hoteltitle ul li a:hover{color:#fff; background:#66cc66;  }
+.hot_hoteltitle span,.item_hoteltitle span{display:block; padding-top:8px; float:right;}
+.hot_hoteltitle span a,.item_hoteltitle span a{color:#666;  }
+.hot_hoteltitle span a:hover{color:#66cc66;}
+.hot_hotellist{ overflow:hidden; padding-top:15px;}
+.hotellist_le{width:210px; height:330px; float:left; }
+.hotellist_le a.spe{width:210px; height:330px; display:block; }
+.hotellist_le a.spe img{width:210px; height:330px; }
+.hotellist_ri{float:left; width:675px; overflow:hidden;}
+.hotellist_ri ul{overflow:hidden;}
+.hotellist_ri ul li{width:210px; height:158px; position:relative; padding-left:15px; margin-bottom:10px; float:left;}
+.hotellist_ri ul li .pic{width:210px; height:158px; overflow:hidden;}
+.hotellist_ri ul li .pic a{display:block; width:210px; height:128px; overflow:hidden;}
+.hotellist_ri ul li .pic a img{width:100%; height:100%;}
+.hotellist_ri ul li .hot_text{width:210px; height:30px; background:#fff; line-height:30px; position:absolute; bottom:0px; left:15px;}
+.hotellist_ri ul li .hot_text span{display:block; width:140px; color:#757575; float:left; height:30px; +padding-top:2px; overflow:hidden;}
+.hotellist_ri ul li .hot_text span a{color:#757575;}
+.hotellist_ri ul li .hot_text span a:hover{color:#f90;}
+.hotellist_ri ul li .hot_text p{display:block; width:70px; text-align:right; float:right;}
+.hotellist_ri ul li .hot_text p i{color:#f60; font-size:12px;}
+.hotellist_ri ul li .hot_text p em{color:#f60; font-family:Arial,Helvetica,sans-serif; font-size:18px; font-style:normal; padding-right:2px;}
+.hotellist_ri ul li .hot_text p strong{font-weight:normal; color:#666;   position:relative; top:-2px;}
+/*鐑棬閰掑簵end*/
+/*鐗硅壊瀹㈡爤end*/
+.item_hoteltitle{border-bottom:#8d6456 solid 2px;}
+.item_hoteltitle h3{color:#8d6456;}
+.item_hoteltitle ul li.cur a,.item_hoteltitle ul li a:hover{color:#fff; background:#8d6456;  }
+.item_hoteltitle span a:hover{color:#8d6456;}
+/*鐗硅壊瀹㈡爤end*/
+/*寰€鏈熶笓棰榮tart*/
+.special_list ul{overflow:hidden;}
+.special_list ul li{width:210px; height:140px; padding-right:15px; float:left; overflow:hidden;}
+.special_list ul li a{width:210px; height:140px; overflow:hidden; display:block;}
+/*寰€鏈熶笓棰榚nd*/
+/*涓诲唴瀹瑰乏渚nd*/
+/*涓诲唴瀹瑰彸渚tart*/
+.indexmain_ri{width:280px; float:right; overflow:hidden;}
+/*鎵嬫満浣忓摢鍎縮tart*/
+.app_des{ height:135px; overflow:hidden;}
+.watu_right{ margin-bottom:35px;}
+.app_title,.recom_title,.brand_title,.theme_title,.toolbox_title{overflow:hidden; border-bottom:#d5d5d5 solid 2px; height:35px;}
+.app_title h3,.recom_title h3,.brand_title h3,.theme_title h3,.toolbox_title h3{color:#666; font-size:17px; width:140px; padding:4px 0px 0px 10px; float:left;}
+.app_title span,.recom_title span{display:block; color:#f90;   padding-top:8px; float:right;}
+.app_list{overflow:hidden; border:#dedede solid 1px; border-top:none; padding:10px 15px;}
+.app_list ul{overflow:hidden; width:310px;}
+.app_list ul li{width:64px; height:77px; float:left; padding-right:25px; cursor:pointer;}
+.app_list ul li.android{background:url(../images/index/Android.jpg) 0 0 no-repeat;}
+.app_list ul li.androidcur{background:url(../images/index/Androidcur.jpg) 0 0 no-repeat;}
+.app_list ul li.app{background:url(../images/index/app.jpg) 0 0 no-repeat;}
+.app_list ul li.appcur{background:url(../images/index/appcur.jpg) 0 0 no-repeat;}
+.app_list ul li.message{background:url(../images/index/weixin.jpg) 0 0 no-repeat; width:60px; height:77px;}
+/*鎵嬫満浣忓摢鍎縠nd*/
+/*涓烘偍鎺ㄨ崘start*/
+.recommend{height:322px; overflow:hidden;}
+.recom_title span{background-position:0px -245px; padding-left:20px; cursor:pointer;}
+.recom_list,.brand_list,.toolbox_list{padding-top:15px; overflow:hidden;}
+.recom_list ul{overflow:hidden;}
+.recom_list ul li{width:280px; height:80px; padding-bottom:15px;}
+.recom_list ul li a{display:block;}
+/*涓烘偍鎺ㄨ崘end*/
+/*鍝佺墝杩為攣start*/
+.brand_chain,.theme_hotel{height:382px; overflow:hidden;}
+.theme_hotel{_padding-top:6px;}
+.brand_title h3{ width:80px;}
+.brand_title ul{overflow:hidden; padding-top:8px; float:right;}
+.brand_title ul li{overflow:hidden; float:left;}
+.brand_title ul li a{display:block; padding:1px 10px; color:#adadad;  }
+.brand_title ul li.cur a,.brand_title ul li a:hover{ background:#66cc66; color:#fff;  }
+.brand_list dl{overflow:hidden; padding:10px; height:60px; cursor:pointer;}
+.brand_list dl.cur{background:#fafafa;}
+.brand_list dl dt{width:78px; height:58px; border:#e8e8e8 solid 1px; float:left;}
+.brand_list dl dd{width:170; padding-left:10px; float:left;}
+.brand_list dl dd ul{overflow:hidden;}
+.brand_list dl dd ul li{overflow:hidden; color:#999;   height:20px;}
+.brand_list dl dd ul li a{display:block; color:#666;}
+.brand_list dl dd ul li i,.brand_list dl dd ul li em{font-family:Arial, Helvetica, sans-serif; font-style:normal; font-size:13px; padding-right:5px;}
+.brand_list dl dd ul li em{color:#f90;}
+/*鍝佺墝杩為攣end*/
+/*涓婚瀹㈡爤start*/
+.theme_list{overflow:hidden; padding:10px 0px 10px 10px;}
+.theme_list dl{overflow:hidden; height:110px;}
+.theme_list dl dt{color:#666; font-size:14px; padding-bottom:5px;}
+.theme_list dl dd{overflow:hidden; padding-bottom:10px;}
+.theme_list dl dd ul{overflow:hidden;}
+.theme_list dl dd ul li{padding:10px 0px; white-space:nowrap; float:left;}
+.theme_list dl dd ul li span{color:#999;   display:block; float:left; position:relative;} 
+.theme_list dl dd ul li span a{color:#999;  }
+.theme_list dl dd ul li span a:hover{ color:#f90; text-decoration:none;}
+.theme_list dl dd ul li span i{background:url(../images/index/theme_ic.jpg) 0 0 no-repeat; display:block; position:absolute; width:9px; height:9px; right:-7px; top:-7px;}
+.theme_list dl dd ul li em{font-style:normal; color:#999; display:block; padding:0px 12px; float:left;}
+/*涓婚瀹㈡爤end*/
+/*浣忓摢宸ュ叿绠眘tart*/
+.toolbox{overflow:hidden; _padding-top:6px;}
+.toolbox_list ul{overflow:hidden; padding:0px 10px;}
+.toolbox_list ul li{float:left; font-size:16px; height:26px; line-height:26px; margin-bottom:15px; padding:0px 0px 10px 45px; width:80px; border-bottom:1px dotted #e5e5e5;}
+.toolbox_list ul li a{color:#666;}
+.toolbox_list ul li.zool_a{background-position:-305px -105px;}
+.toolbox_list ul li.zool_b{background-position:-293px -242px; padding-left:55px;}
+.toolbox_list ul li.zool_c{background-position:-304px -151px;}
+.toolbox_list ul li.zool_a a, .toolbox_list ul li.zool_c a, .toolbox_list ul li.zool_e a { border-right:1px solid #e5e5e5; display:block; height:24px; line-height:24px;}
+.toolbox_list ul li.zool_d{background-position:-294px -289px; padding-left:55px;}
+.toolbox_list ul li.zool_e{background-position:-302px -197px; border-bottom:none;}
+.toolbox_list ul li.zool_f{background-position:-295px -337px; padding-left:55px; border-bottom:none;}
+/*浣忓摢宸ュ叿绠眅nd*/
+/*涓诲唴瀹瑰彸渚nd*/
+
+@media screen and (max-width:1000px){
+.container{ min-width:1000px;}
+.index_bannerbox,.index_bannerbg,.index_bannerpic{min-width:1000px;}
+.index_banner{width:1000px;}
+.index_main{width:1000px;}
+.index_seabgbox{width:500px;}
+.index_seabg{width:490px;}
+.index_sea{width:470px;}
+.index_sea ul li .inputbox{width:360px;}
+.index_sea ul li .inputbox input{width:358px;}
+.datebox{width:358px;}
+.datebox strong{ padding:0px 5px; width:68px; _padding-left:0px;}
+.index_bannerri{width:1000px;}
+
+.indexmain_le{width:700px;}
+.land_markpop, .pop_con, .pop_con p.index_close{width:698px !important;}
+.landmark_list ul li{padding:5px 0px 0px 12px; margin-right:27px;}
+.like_list dl{width:220px; margin-right:20px;}
+.like_list dl dt{width:220px; height:165px;}
+.like_list dl dt a{display:block; width:220px; height:165px;}
+.hotellist_le{ display:none;}
+.hotellist_ri{width:700px;}
+.hotellist_ri ul{width:720px;}
+.hotellist_ri ul li{width:220px; height:165px; padding-left:0px; padding-right:20px;}
+.hotellist_ri ul li .pic{width:220px; height:165px;}
+.hotellist_ri ul li .pic a{ width:220px; height:;}
+.hotellist_ri ul li .hot_text{width:220px; left:0px;}
+.special_list ul li{width:220px; height:147px; padding-right:20px;}
+.special_list ul li a{width:220px; height:147px;}
+.special_list{height:147px;}
+.mainbox{margin:0 auto; overflow: hidden; width:1000px;}
+.friend_box{width:998px;}
+.friend_tab{width:998px;}
+}
+
+/*棣栭〉end*/
+/*鍝囬€�**/
+.watu_hotel .item_hoteltitle h3 { color: #ff6600 }
+.watu_hotel .item_hoteltitle { border-bottom: 2px solid #f60 }
+.watu_hotel .item_hoteltitle ul li a { color: #757575 }
+.watu_hotel .item_hoteltitle ul li.cur a, .watu_hotel .item_hoteltitle ul li a:hover { background: #f60; color: #fff }
+.hotellist_ri ol li{ width:210px; float:left; height:175px; position:relative; overflow:hidden; margin-left:15px; margin-bottom:15px;}
+.watu_tips{ position:absolute; left:2px; width:196px; padding:0 5px; height:30px; overflow:hidden; background:#fff; bottom:2px; line-height:30px; opacity:0.9; font-size:14px;}
+.watu_tips em{ font-size:14px; font-style:normal}
+.watu_tips span{ font-size:18px; color:#f60}
+.watu_tips a{ color:#3a5671}
+.watu_tips a:hover{ color:#f60}
+.watu_note{ position:absolute; padding:0 8px; line-height:30px; color:#fff; top:10px; left:0px; height:30px; background:#f60; font-size:16px;  }
+.watu_img{ padding-top:15px;}
+.watu_img ul li{ height:80px; margin-bottom:15px; overflow:hidden}
+.watu_img ul li a img{ width:280px !important; }
+
+.watu_hotel .item_hoteltitle h3 { color: #ff6600 }
+.watu_hotel .item_hoteltitle { border-bottom: 2px solid #f60 }
+.watu_hotel .item_hoteltitle ul li a { color: #757575 }
+.watu_hotel .item_hoteltitle ul li.cur a, .watu_hotel .item_hoteltitle ul li a:hover { background: #f60; color: #fff }
+.hotellist_ri ol li { width: 210px; float: left; height: 175px; position: relative; overflow: hidden; margin-left: 15px; margin-bottom: 15px; }
+.hotellist_ri ol li a{ display:block; width: 210px;height: 175px; overflow:hidden}
+.hotellist_ri ol li .watu_tips a{ width: 140px;
+height: 30px;
+line-height: 30px;
+overflow: hidden;
+float: left;}
+.hotellist_ri ol li img{ height:175px; width:auto; margin-left:-76px;}
+.watu_con{ overflow: hidden;
+height: 422px;}
+.watu_tips { position: absolute; left: 2px; width: 196px; padding: 0 5px; height: 30px; overflow: hidden; background: #fff; bottom: 2px; line-height: 30px; opacity: 0.9; font-size: 14px; }
+.watu_tips em { font-size: 14px; font-style: normal }
+.watu_tips span { font-size: 18px; color: #f60 }
+.watu_tips a { color: #3a5671 }
+.watu_tips a:hover { color: #f60 }
+.watu_note { position: absolute; padding: 0 8px; line-height: 30px; color: #fff; top: 10px; left: 0px; height: 30px; background: #f60; font-size: 16px; }
+.watu_img { padding-top: 15px; }
+.watu_img ul li { height: 80px; margin-bottom: 15px; overflow: hidden }

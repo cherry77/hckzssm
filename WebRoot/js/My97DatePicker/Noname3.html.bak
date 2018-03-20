@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+   <link rel="stylesheet" href="WdatePicker.css" type="text/css" />
+  <title>Document</title>
+  <style>
+   .Wdate{position:absolute;left:100px;}
+  </style>
+ </head>
+ <body>
+   <script src="WdatePicker.js"></script>
+   <input class="Wdate" type="text" onclick="WdatePicker()"/>
+ </body>
+</html>
+

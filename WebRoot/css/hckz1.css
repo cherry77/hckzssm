@@ -1,0 +1,231 @@
+*{
+	padding:0;
+	margin:0;
+	
+}
+body{
+	width: 100%;
+	height: 100%;
+	background:whitesmoke;
+	overflow-x: hidden;
+}
+#in{
+	position: relative;
+	top:20px;
+	width: 90%;
+	height: 40px;;
+	background:white;
+	margin-left:5%;
+	
+}
+#in label{
+	border:1px solid ghostwhite;
+	margin-left: 10px;
+	line-height: 20px;
+}
+#in input{
+	border: none;
+	margin-left:2%;
+	height:30px;
+	margin-top: 5px;
+	
+}
+#in .inpu{
+	color: white;
+	background: orange;
+}
+#but1{
+	width: 92%;
+	background:white;
+	margin: 5%;
+	border:1px solid darkgrey;	
+	
+}
+
+#but1 p{
+	display: block;
+	position: relative;
+	float: left;
+}
+#but1 .but1{
+	width: 95%;
+	margin:1% 2%;
+	padding-bottom:2%;
+	border-bottom: 0.5px solid lightgray;
+}
+#but1 .but1 label:hover{
+	color: orangered;
+}
+#but1 .but1 label{
+	padding:5px 20px;	
+}
+#but1 .but1 img{
+	width: 10px;
+	height:10px;
+	color:gray;
+	margin-left: 5px;
+}
+
+#but1 .but2{
+	width: 95%;
+	margin:1% 2%;
+	padding-bottom:2%;
+	border-bottom: 0.5px solid lightgray;
+}
+#but1 .but2 label:hover{
+	color: orangered;
+}
+#but1 .but2 label{
+	padding:5px 20px;	
+}
+#but1 .but2 img{
+	width: 10px;
+	height:10px;
+	color:gray;
+	margin-left: 5px;
+}
+#but1 .but3{
+	width: 95%;
+	margin:1% 2%;
+	padding-bottom:2%;
+	border-bottom: 0.5px solid lightgray;
+}
+#but1 .but3 label:hover{
+	color: orangered;
+}
+#but1 .but3 label{
+	padding:5px 20px;	
+}
+#but1 .but3 img{
+	width: 10px;
+	height:10px;
+	color:gray;
+	margin-left: 5px;
+}
+#but1 .but4{
+	width: 95%;
+	margin:1% 2%;
+	padding-bottom:2%;
+	border-bottom: 0.5px solid lightgray;
+}
+#but1 .but4 label:hover{
+	color: orangered;
+}
+#but1 .but4 label{
+	padding:5px 20px;	
+}
+#but1 .but4 img{
+	width: 10px;
+	height:10px;
+	color:gray;
+	margin-left: 5px;
+}
+#but1 .but5{
+	width: 95%;
+	margin:1% 2%;
+	padding-bottom:2%;
+}
+#but1 .but5 label:hover{
+	color: orangered;
+}
+#but1 .but5 label{
+	padding:5px 20px;	
+}
+#but1 .but5 img{
+	width: 10px;
+	height:10px;
+	color:gray;
+	margin-left: 5px;
+}
+#con .inp1{
+	width: 90%;
+    height: 35px;	
+    margin: 5%;
+    background: gainsboro;
+    opacity: 0.8;
+}
+#con .inp1 li {
+	float: left;
+	list-style-type: none;
+}
+#con .inp1 li input{
+	width: 80px;
+	height:35px;
+	border: none;
+	border: 1px solid gray;
+}
+#con .inp1 li input:hover{
+	background: orangered;
+	border: none;
+}
+
+#con .in{
+	width: 90%;
+	background: white;
+	margin: 5%;
+	
+}
+
+#con .info{
+	width: 90%;
+	height:145px;
+	margin: 5%;
+	border-top: 0.5px solid darkgray;
+	border-bottom: 0.5px solid darkgray;
+	padding: 20px 0;
+	
+}
+#con .info b{
+	text-decoration: none;
+	color: deepskyblue;
+	font-size: 18px;
+	position: relative;
+   top:-100px;
+   left: 20px;	
+}
+#con .info b:hover{
+	color:orangered;
+}
+#con .info p{
+	color: dimgray
+	font-size: 8px;
+	position: relative;
+   top:-90px;
+   left: 185px;	
+}
+#con .info .t1{
+	position: relative;
+    left:70%;
+    top:-130px;
+    font-size: 35px;
+    color: orangered;
+    
+}
+#con .info .t2{
+	
+	height: 80px;
+	position: relative;
+    left:70%;
+    top:-130px;
+    font-size: 20px;
+    color: darkgray;
+    
+}
+#con .info .t3{
+	height: 80px;
+	position: relative;
+    left:85%;
+    top:-180px;
+    font-size: 35px;
+    color: orangered;
+    border-left: 1px solid grey;
+    padding-left: 20px;
+    
+}
+#con .info .t3 p{
+	position: relative;
+    left:9%;
+    top:-28px;
+	font-size:15px;
+	color: darkgray;
+}

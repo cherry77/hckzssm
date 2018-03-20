@@ -1,0 +1,16 @@
+div#login_htmls {
+    position: absolute;
+    top: 91px;
+    right: 336px;
+    font-size: 15px;
+}
+div#login_htmls .myhome{
+ display: block;
+}
+div#login_htmls .login{
+ display: block;
+}
+div#login_htmls .login li,div#login_htmls .myhome li{
+float: left;
+margin-right: 5px;
+}

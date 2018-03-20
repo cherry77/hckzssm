@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hckz.dao.OrderMapper" >
+  <resultMap id="BaseResultMap" type="com.hckz.entity.Order" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="inTime" property="intime" jdbcType="TIMESTAMP" />
+    <result column="outTime" property="outtime" jdbcType="TIMESTAMP" />
+    <result column="customerId" property="customerid" jdbcType="INTEGER" />
+    <result column="roomId" property="roomid" jdbcType="INTEGER" />
+    <result column="hotelId" property="hotelid" jdbcType="INTEGER" />
+    <result column="other" property="other" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="orderState" property="orderstate" jdbcType="INTEGER" />
+    <result column="totalPrice" property="totalprice" jdbcType="DECIMAL" />
+    <result column="customerName" property="customername" jdbcType="VARCHAR" />
+    
+    <!-- 多对一  订单对客户-->
+    <association property="customer" javaType="Customer">
+    	<id column="customerId" property="customerid" jdbcType="INTEGER" />
+	    <result column="customerName" property="customername" jdbcType="VARCHAR" />
+	    <result column="customerPassword" property="customerpassword" jdbcType="VARCHAR" />
+	    <result column="customerPhone" property="customerphone" jdbcType="VARCHAR" />
+    </association>
+     
+   <!--  <association property="room" javaType="Room" column="roomId"
+    resultMap="com.hckz.dao.RoomMapper.BaseResultMap"></association> -->
+    
+     <association property="hotel" javaType="Hotel" column="hotelId"
+    resultMap="com.hckz.dao.HotelMapper.BaseResultMap">
+    </association>   
+
+   	<collection property="rooms" ofType="Room" column="roomId" 
+     resultMap="com.hckz.dao.RoomMapper.BaseResultMap">    	  
+    </collection>
+ </resultMap>   
+  <sql id="Base_Column_List" >
+    id, name, mobile, inTime, outTime, customerId, roomId, hotelId,other, email, orderState, 
+    totalPrice, customerName
+  </sql>
+  
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from `order`
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+ <!--  在预订成功界面上查询订单详情 -->
+ <select id="selectSubmit" resultMap="BaseResultMap"  >
+ 	select o.roomid,h.hotelId,r.room_roomId,o.customerId,
+	o.`name`,o.mobile,o.inTime,o.outTime,o.orderState,o.totalPrice,o.customerName,
+	h.hotelName,h.hotelPosition,
+	r.room_imgurl,r.room_type,r.room_state
+	from `order` o,hotel h,room r
+	where o.roomid=r.room_roomId and o.hotelid=h.hotelId and 
+	r.room_roomId = #{0} and
+	h.hotelId= #{1}
+  </select>
+ 
+<!--  根据客户id在查询界面上查询订单详情 -->
+ <select id="selectOrder" resultMap="BaseResultMap"  >
+ 	select o.id,o.roomid,h.hotelId,r.room_roomId,o.customerId,
+	o.`name`,o.mobile,o.inTime,o.outTime,o.orderState,o.totalPrice,o.customerName,
+	h.hotelName,h.hotelPosition,
+	r.room_imgurl,r.room_type,r.room_state
+	from `order` o,hotel h,room r
+	where o.roomid=r.room_roomId and o.hotelid=h.hotelId and o.customerId=#{0}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  
+ <!-- 提交订单到订单表  -->
+  <insert id="insert" parameterType="com.hckz.entity.Order" >
+     insert into `order` (`name`, mobile,inTime, outTime,  customerId, roomId, hotelId,other, email, orderState, 
+    totalPrice, customerName)
+    values (#{name,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{intime,jdbcType=TIMESTAMP}, #{outtime,jdbcType=TIMESTAMP}, #{customerid,jdbcType=INTEGER}, 
+      #{roomid,jdbcType=INTEGER},#{hotelid,jdbcType=INTEGER}, #{other,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{orderstate,jdbcType=INTEGER}, #{totalprice,jdbcType=DECIMAL}, #{customername,jdbcType=VARCHAR}
+      )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.hckz.entity.Order" >
+    insert into order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="intime != null" >
+        inTime,
+      </if>
+      <if test="outtime != null" >
+        outTime,
+      </if>
+      <if test="customerid != null" >
+        customerId,
+      </if>
+      <if test="roomid != null" >
+        roomId,
+      </if>
+      <if test="other != null" >
+        other,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="orderstate != null" >
+        orderState,
+      </if>
+      <if test="totalprice != null" >
+        totalPrice,
+      </if>
+      <if test="customername != null" >
+        customerName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=DECIMAL},
+      </if>
+      <if test="intime != null" >
+        #{intime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="outtime != null" >
+        #{outtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customerid != null" >
+        #{customerid,jdbcType=INTEGER},
+      </if>
+      <if test="roomid != null" >
+        #{roomid,jdbcType=INTEGER},
+      </if>
+      <if test="other != null" >
+        #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="orderstate != null" >
+        #{orderstate,jdbcType=INTEGER},
+      </if>
+      <if test="totalprice != null" >
+        #{totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="customername != null" >
+        #{customername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hckz.entity.Order" >
+    update order
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=DECIMAL},
+      </if>
+      <if test="intime != null" >
+        inTime = #{intime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="outtime != null" >
+        outTime = #{outtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customerid != null" >
+        customerId = #{customerid,jdbcType=INTEGER},
+      </if>
+      <if test="roomid != null" >
+        roomId = #{roomid,jdbcType=INTEGER},
+      </if>
+      <if test="other != null" >
+        other = #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="orderstate != null" >
+        orderState = #{orderstate,jdbcType=INTEGER},
+      </if>
+      <if test="totalprice != null" >
+        totalPrice = #{totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="customername != null" >
+        customerName = #{customername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <!-- 取消订单，将订单状态改为0:无效单 -->
+  <update id="updateOrderState" parameterType="com.hckz.entity.Order" >
+	update `order`
+    set 
+      orderState = 0
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  
+  <update id="updateByPrimaryKey" parameterType="com.hckz.entity.Order" >
+    update order
+    set name = #{name,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=DECIMAL},
+      inTime = #{intime,jdbcType=TIMESTAMP},
+      outTime = #{outtime,jdbcType=TIMESTAMP},
+      customerId = #{customerid,jdbcType=INTEGER},
+      roomId = #{roomid,jdbcType=INTEGER},
+      other = #{other,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      orderState = #{orderstate,jdbcType=INTEGER},
+      totalPrice = #{totalprice,jdbcType=DECIMAL},
+      customerName = #{customername,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

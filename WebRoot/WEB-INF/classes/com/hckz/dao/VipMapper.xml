@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hckz.dao.VipMapper" >
+  <resultMap id="BaseResultMap" type="com.hckz.entity.Vip" >
+    <id column="vip_id" property="vipId" jdbcType="INTEGER" />
+    <result column="vip_customerId" property="vipCustomerid" jdbcType="INTEGER" />
+    <result column="vip_degree" property="vipDegree" jdbcType="VARCHAR" />
+    <result column="vip_discount" property="vipDiscount" jdbcType="DECIMAL" />
+    <result column="vip_score" property="vipScore" jdbcType="INTEGER" />
+    <result column="vip_hotelid" property="vipHotelid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    vip_id, vip_customerId, vip_degree, vip_discount, vip_score, vip_hotelid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from vip
+    where vip_id = #{vipId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from vip
+    where vip_id = #{vipId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hckz.entity.Vip" >
+    insert into vip (vip_id, vip_customerId, vip_degree, 
+      vip_discount, vip_score, vip_hotelid
+      )
+    values (#{vipId,jdbcType=INTEGER}, #{vipCustomerid,jdbcType=INTEGER}, #{vipDegree,jdbcType=VARCHAR}, 
+      #{vipDiscount,jdbcType=DECIMAL}, #{vipScore,jdbcType=INTEGER}, #{vipHotelid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hckz.entity.Vip" >
+    insert into vip
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="vipId != null" >
+        vip_id,
+      </if>
+      <if test="vipCustomerid != null" >
+        vip_customerId,
+      </if>
+      <if test="vipDegree != null" >
+        vip_degree,
+      </if>
+      <if test="vipDiscount != null" >
+        vip_discount,
+      </if>
+      <if test="vipScore != null" >
+        vip_score,
+      </if>
+      <if test="vipHotelid != null" >
+        vip_hotelid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="vipId != null" >
+        #{vipId,jdbcType=INTEGER},
+      </if>
+      <if test="vipCustomerid != null" >
+        #{vipCustomerid,jdbcType=INTEGER},
+      </if>
+      <if test="vipDegree != null" >
+        #{vipDegree,jdbcType=VARCHAR},
+      </if>
+      <if test="vipDiscount != null" >
+        #{vipDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="vipScore != null" >
+        #{vipScore,jdbcType=INTEGER},
+      </if>
+      <if test="vipHotelid != null" >
+        #{vipHotelid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hckz.entity.Vip" >
+    update vip
+    <set >
+      <if test="vipCustomerid != null" >
+        vip_customerId = #{vipCustomerid,jdbcType=INTEGER},
+      </if>
+      <if test="vipDegree != null" >
+        vip_degree = #{vipDegree,jdbcType=VARCHAR},
+      </if>
+      <if test="vipDiscount != null" >
+        vip_discount = #{vipDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="vipScore != null" >
+        vip_score = #{vipScore,jdbcType=INTEGER},
+      </if>
+      <if test="vipHotelid != null" >
+        vip_hotelid = #{vipHotelid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where vip_id = #{vipId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hckz.entity.Vip" >
+    update vip
+    set vip_customerId = #{vipCustomerid,jdbcType=INTEGER},
+      vip_degree = #{vipDegree,jdbcType=VARCHAR},
+      vip_discount = #{vipDiscount,jdbcType=DECIMAL},
+      vip_score = #{vipScore,jdbcType=INTEGER},
+      vip_hotelid = #{vipHotelid,jdbcType=INTEGER}
+    where vip_id = #{vipId,jdbcType=INTEGER}
+  </update>
+</mapper>

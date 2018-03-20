@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hckz.dao.HotelMapper" >
+  <resultMap id="BaseResultMap" type="com.hckz.entity.Hotel" >
+    <id column="hotelId" property="hotelid" jdbcType="INTEGER" />
+    <result column="hotelName" property="hotelname" jdbcType="VARCHAR" />
+    <result column="hotelPhone" property="hotelphone" jdbcType="VARCHAR" />
+    <result column="hotelPosition" property="hotelposition" jdbcType="VARCHAR" />
+    <result column="hotelImgurl" property="hotelimgurl" jdbcType="VARCHAR" />
+    <result column="lowPrice" property="lowprice" jdbcType="DECIMAL" />
+    <result column="positionId" property="positionid" jdbcType="INTEGER" />
+    <result column="hotelType" property="hoteltype" jdbcType="VARCHAR" />
+    <result column="cityName" property="cityname" jdbcType="VARCHAR" />
+    <result column="commend" property="commend" jdbcType="BIT" />
+    <result column="clickcount" property="clickcount" jdbcType="INTEGER" />
+    <result column="basePrice" property="baseprice" jdbcType="DECIMAL" />
+    <result column="sellPrice" property="sellprice" jdbcType="DECIMAL" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="sellCount" property="sellcount" jdbcType="INTEGER" />
+    <result column="uploadFile" property="uploadfile" jdbcType="INTEGER" />
+    
+     <collection property="hoteldetails" ofType="Hoteldetails" column="hotelid" resultMap="com.hckz.dao.HoteldetailsMapper.BaseResultMap">    	  
+    </collection>
+    
+    <collection property="rooms" ofType="Room" column="hotelid" resultMap="com.hckz.dao.RoomMapper.BaseResultMap">    	  
+    </collection>
+    
+  </resultMap>
+  <sql id="Base_Column_List" >
+    hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId, 
+    hotelType, cityName, commend, clickcount, basePrice, sellPrice, description, sellCount, 
+    uploadFile
+  </sql>
+  
+   <!--  根据城市名字模糊查询 -->
+   <select id="findByHotelName" resultMap="BaseResultMap" >
+    select  
+    hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId 
+    from hotel where hotelName like '%' #{0} '%' 
+  </select>
+  
+   <!-- 分页查询 -->
+   <!--查询操作记录-->
+   <!--  <select id="selectHotels" parameterType="SeeRecord" resultMap="BaseResultMap">
+         select  
+    hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId 
+    from hotel where hotelName like '%' #{hotelname} '%' limit #{page.startPos},#{page.pageSize}startPos开始页 ， pageSize每页显示的记录条数
+    </select> -->
+    <!--查询总记录条数-->
+    <!-- <select id="getCount" resultType="int" parameterType="java.lang.String">
+        select count(1) from hotel where hotelName like "%" #{0} "%"
+    </select> -->
+
+     <select id="findHotelDetails" resultMap="BaseResultMap" >
+    select 
+    hd.hotelid,
+    hd.imgurl, 
+    h.hotelImgurl,
+    hd.imgtype, 
+    hd.hotelIntroduce,
+    h.hotelName,
+    h.hotelPhone,
+    h.hotelPosition,
+    h.lowPrice,
+    h.positionId
+    from hoteldetails as hd,hotel as  h
+    where hd.hotelid=h.hotelId and  hd.hotelid = #{hd.hotelid}
+  </select> 
+  
+  <!--   查询酒店房间 -->
+<select id="findRoom" resultMap="BaseResultMap" >
+   select 
+   r.room_roomId,
+   h.hotelId,
+   h.hotelName,
+   h.hotelposition,
+   r.room_imgurl,
+   r.room_price,
+   r.room_state,
+   r.room_type
+from hotel h,room r 
+where h.hotelId=r.hotelid and r.hotelId = #{0}
+  </select> 
+  
+  
+   <!-- 查询所有酒店信息 -->
+  <select id="findAllHotel" resultMap="BaseResultMap"  >
+    select 
+   hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId
+    from hotel
+  </select>
+  
+  
+  <!-- 根据酒店所在地查询酒店 positionid=1：北京 2：上海 3：广州 4：深圳 -->
+   <select id="findBeijing" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+   hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId
+    from hotel
+    where positionid = 1
+  </select>
+	<!--   上海 -->
+	<select id="findShangHai" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+	    select 
+	   hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId
+	    from hotel
+	    where positionid = 2
+	  </select>
+  
+	<!--   广州 -->
+	<select id="findGuangzhou" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+	    select 
+	   hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId
+	    from hotel
+	    where positionid = 3
+	  </select>
+	<!-- 深圳 -->
+	<select id="findShenZhen" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+	    select 
+	   hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId
+	    from hotel
+	    where positionid = 4
+	  </select>
+	  <!-- 成都 -->
+	<select id="findChengDu" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+	    select 
+	   hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId
+	    from hotel
+	    where positionid = 5
+	  </select>
+	  <!-- 丽江 -->
+	<select id="findLiJiang" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+	    select 
+	   hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId
+	    from hotel
+	    where positionid = 6
+	  </select>
+	  <!-- 乌镇 -->
+	<select id="findWuZhen" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+	    select 
+	   hotelId, hotelName, hotelPhone, hotelPosition, hotelImgurl, lowPrice, positionId
+	    from hotel
+	    where positionid = 7
+	  </select>
+  
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from hotel
+    where hotelId = #{hotelid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from hotel
+    where hotelId = #{hotelid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hckz.entity.Hotel" >
+    insert into hotel (hotelId, hotelName, hotelPhone, 
+      hotelPosition, hotelImgurl, lowPrice, 
+      positionId, hotelType, cityName, 
+      commend, clickcount, basePrice, 
+      sellPrice, description, sellCount, 
+      uploadFile)
+    values (#{hotelid,jdbcType=INTEGER}, #{hotelname,jdbcType=VARCHAR}, #{hotelphone,jdbcType=VARCHAR}, 
+      #{hotelposition,jdbcType=VARCHAR}, #{hotelimgurl,jdbcType=VARCHAR}, #{lowprice,jdbcType=DECIMAL}, 
+      #{positionid,jdbcType=INTEGER}, #{hoteltype,jdbcType=VARCHAR}, #{cityname,jdbcType=VARCHAR}, 
+      #{commend,jdbcType=BIT}, #{clickcount,jdbcType=INTEGER}, #{baseprice,jdbcType=DECIMAL}, 
+      #{sellprice,jdbcType=DECIMAL}, #{description,jdbcType=VARCHAR}, #{sellcount,jdbcType=INTEGER}, 
+      #{uploadfile,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hckz.entity.Hotel" >
+    insert into hotel
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="hotelid != null" >
+        hotelId,
+      </if>
+      <if test="hotelname != null" >
+        hotelName,
+      </if>
+      <if test="hotelphone != null" >
+        hotelPhone,
+      </if>
+      <if test="hotelposition != null" >
+        hotelPosition,
+      </if>
+      <if test="hotelimgurl != null" >
+        hotelImgurl,
+      </if>
+      <if test="lowprice != null" >
+        lowPrice,
+      </if>
+      <if test="positionid != null" >
+        positionId,
+      </if>
+      <if test="hoteltype != null" >
+        hotelType,
+      </if>
+      <if test="cityname != null" >
+        cityName,
+      </if>
+      <if test="commend != null" >
+        commend,
+      </if>
+      <if test="clickcount != null" >
+        clickcount,
+      </if>
+      <if test="baseprice != null" >
+        basePrice,
+      </if>
+      <if test="sellprice != null" >
+        sellPrice,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="sellcount != null" >
+        sellCount,
+      </if>
+      <if test="uploadfile != null" >
+        uploadFile,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="hotelid != null" >
+        #{hotelid,jdbcType=INTEGER},
+      </if>
+      <if test="hotelname != null" >
+        #{hotelname,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelphone != null" >
+        #{hotelphone,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelposition != null" >
+        #{hotelposition,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelimgurl != null" >
+        #{hotelimgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="lowprice != null" >
+        #{lowprice,jdbcType=DECIMAL},
+      </if>
+      <if test="positionid != null" >
+        #{positionid,jdbcType=INTEGER},
+      </if>
+      <if test="hoteltype != null" >
+        #{hoteltype,jdbcType=VARCHAR},
+      </if>
+      <if test="cityname != null" >
+        #{cityname,jdbcType=VARCHAR},
+      </if>
+      <if test="commend != null" >
+        #{commend,jdbcType=BIT},
+      </if>
+      <if test="clickcount != null" >
+        #{clickcount,jdbcType=INTEGER},
+      </if>
+      <if test="baseprice != null" >
+        #{baseprice,jdbcType=DECIMAL},
+      </if>
+      <if test="sellprice != null" >
+        #{sellprice,jdbcType=DECIMAL},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="sellcount != null" >
+        #{sellcount,jdbcType=INTEGER},
+      </if>
+      <if test="uploadfile != null" >
+        #{uploadfile,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hckz.entity.Hotel" >
+    update hotel
+    <set >
+      <if test="hotelname != null" >
+        hotelName = #{hotelname,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelphone != null" >
+        hotelPhone = #{hotelphone,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelposition != null" >
+        hotelPosition = #{hotelposition,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelimgurl != null" >
+        hotelImgurl = #{hotelimgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="lowprice != null" >
+        lowPrice = #{lowprice,jdbcType=DECIMAL},
+      </if>
+      <if test="positionid != null" >
+        positionId = #{positionid,jdbcType=INTEGER},
+      </if>
+      <if test="hoteltype != null" >
+        hotelType = #{hoteltype,jdbcType=VARCHAR},
+      </if>
+      <if test="cityname != null" >
+        cityName = #{cityname,jdbcType=VARCHAR},
+      </if>
+      <if test="commend != null" >
+        commend = #{commend,jdbcType=BIT},
+      </if>
+      <if test="clickcount != null" >
+        clickcount = #{clickcount,jdbcType=INTEGER},
+      </if>
+      <if test="baseprice != null" >
+        basePrice = #{baseprice,jdbcType=DECIMAL},
+      </if>
+      <if test="sellprice != null" >
+        sellPrice = #{sellprice,jdbcType=DECIMAL},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="sellcount != null" >
+        sellCount = #{sellcount,jdbcType=INTEGER},
+      </if>
+      <if test="uploadfile != null" >
+        uploadFile = #{uploadfile,jdbcType=INTEGER},
+      </if>
+    </set>
+    where hotelId = #{hotelid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hckz.entity.Hotel" >
+    update hotel
+    set hotelName = #{hotelname,jdbcType=VARCHAR},
+      hotelPhone = #{hotelphone,jdbcType=VARCHAR},
+      hotelPosition = #{hotelposition,jdbcType=VARCHAR},
+      hotelImgurl = #{hotelimgurl,jdbcType=VARCHAR},
+      lowPrice = #{lowprice,jdbcType=DECIMAL},
+      positionId = #{positionid,jdbcType=INTEGER},
+      hotelType = #{hoteltype,jdbcType=VARCHAR},
+      cityName = #{cityname,jdbcType=VARCHAR},
+      commend = #{commend,jdbcType=BIT},
+      clickcount = #{clickcount,jdbcType=INTEGER},
+      basePrice = #{baseprice,jdbcType=DECIMAL},
+      sellPrice = #{sellprice,jdbcType=DECIMAL},
+      description = #{description,jdbcType=VARCHAR},
+      sellCount = #{sellcount,jdbcType=INTEGER},
+      uploadFile = #{uploadfile,jdbcType=INTEGER}
+    where hotelId = #{hotelid,jdbcType=INTEGER}
+  </update>
+</mapper>

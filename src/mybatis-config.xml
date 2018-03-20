@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>     
+    	<!-- 允许JDBC支持生成的键 -->
+        <setting name="useGeneratedKeys" value="true"/>
+    </settings>  
+	<typeAliases>
+		<!-- 配置数据类型的别名 -->
+		<typeAlias type="com.hckz.entity.Comment"  alias="Comment"/>
+		<typeAlias type="com.hckz.entity.Customer"  alias="Customer"/>
+		<typeAlias type="com.hckz.entity.Hotel_room"  alias="Hotel_room"/>
+		<typeAlias type="com.hckz.entity.Hotel"  alias="Hotel"/>
+		<typeAlias type="com.hckz.entity.HotelType"  alias="HotelType"/>
+		<typeAlias type="com.hckz.entity.Order"  alias="Order"/>
+		<typeAlias type="com.hckz.entity.Orderitem"  alias="Orderitem"/>
+		<typeAlias type="com.hckz.entity.Room"  alias="Room"/>
+		<typeAlias type="com.hckz.entity.Vip"  alias="Vip"/>
+		<typeAlias type="com.hckz.entity.Hoteldetails"  alias="Hoteldetails"/>
+		<typeAlias type="com.hckz.entity.SeeRecord"  alias="SeeRecord"/>
+		<typeAlias type="com.hckz.entity.Page"  alias="Page"/>
+		
+	</typeAliases>
+	<!-- 默认的环境ID  -->
+	<environments default="development">
+		<!-- 每个environment元素定义的环境ID -->
+		<environment id="development">
+			<!-- 事务处理方式 -->
+			<transactionManager type="JDBC" />
+			<!-- 数据源配置 -->
+			<dataSource type="POOLED">
+				<!-- 数据库JDBC驱动 -->
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<!-- 数据库URL -->
+				<property name="url" value="jdbc:mysql://localhost:3306/hckz_dbs" />
+				<!-- 数据库用户 -->
+				<property name="username" value="root" /> 
+				<!-- 密码 -->
+				<property name="password" value="root" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<!-- 配置映射文件 -->
+		
+		<mapper resource="com/hckz/dao/CommentMapper.xml"/>
+		<mapper resource="com/hckz/dao/CustomerMapper.xml"/>
+		<mapper resource="com/hckz/dao/Hotel_roomMapper.xml"/>
+		<mapper resource="com/hckz/dao/HotelMapper.xml"/>
+		<mapper resource="com/hckz/dao/HotelTypeMapper.xml"/>
+		<mapper resource="com/hckz/dao/OrderitemMapper.xml"/>
+		<mapper resource="com/hckz/dao/OrderMapper.xml"/>
+		<mapper resource="com/hckz/dao/RoomMapper.xml"/>
+		<mapper resource="com/hckz/dao/VipMapper.xml"/>
+		<mapper resource="com/hckz/dao/HoteldetailsMapper.xml"/>
+		
+	</mappers>
+</configuration>

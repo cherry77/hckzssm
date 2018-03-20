@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hckz.dao.OrderitemMapper" >
+  <resultMap id="BaseResultMap" type="com.hckz.entity.Orderitem" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="hoteltId" property="hoteltid" jdbcType="TIMESTAMP" />
+    <result column="hotelName" property="hotelname" jdbcType="INTEGER" />
+    <result column="roomPrice" property="roomprice" jdbcType="DECIMAL" />
+    <result column="roomNum" property="roomnum" jdbcType="INTEGER" />
+    <result column="orderId" property="orderid" jdbcType="INTEGER" />
+    
+      <!-- 多对一映射订单OrderDetails  订单条目OrderItem和订单Order是多对一的关系-->
+    <association property="order" javaType="Order">
+    	<id column="id" property="id" jdbcType="INTEGER" />
+	    <result column="name" property="name" jdbcType="INTEGER" />
+	    <result column="mobile" property="mobile" jdbcType="DECIMAL" />
+	    <result column="inTime" property="intime" jdbcType="TIMESTAMP" />
+	    <result column="outTime" property="outtime" jdbcType="TIMESTAMP" />
+	    <result column="customerId" property="customerid" jdbcType="INTEGER" />
+	    <result column="roomId" property="roomid" jdbcType="INTEGER" />
+	    <result column="other" property="other" jdbcType="VARCHAR" />
+	    <result column="email" property="email" jdbcType="VARCHAR" />
+	    <result column="orderState" property="orderstate" jdbcType="VARCHAR" />
+    </association>
+    
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, hoteltId, hotelName, roomPrice, roomNum, orderId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from orderitem
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from orderitem
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hckz.entity.Orderitem" >
+    insert into orderitem (id, hoteltId, hotelName, 
+      roomPrice, roomNum, orderId
+      )
+    values (#{id,jdbcType=INTEGER}, #{hoteltid,jdbcType=TIMESTAMP}, #{hotelname,jdbcType=INTEGER}, 
+      #{roomprice,jdbcType=DECIMAL}, #{roomnum,jdbcType=INTEGER}, #{orderid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hckz.entity.Orderitem" >
+    insert into orderitem
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="hoteltid != null" >
+        hoteltId,
+      </if>
+      <if test="hotelname != null" >
+        hotelName,
+      </if>
+      <if test="roomprice != null" >
+        roomPrice,
+      </if>
+      <if test="roomnum != null" >
+        roomNum,
+      </if>
+      <if test="orderid != null" >
+        orderId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="hoteltid != null" >
+        #{hoteltid,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hotelname != null" >
+        #{hotelname,jdbcType=INTEGER},
+      </if>
+      <if test="roomprice != null" >
+        #{roomprice,jdbcType=DECIMAL},
+      </if>
+      <if test="roomnum != null" >
+        #{roomnum,jdbcType=INTEGER},
+      </if>
+      <if test="orderid != null" >
+        #{orderid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hckz.entity.Orderitem" >
+    update orderitem
+    <set >
+      <if test="hoteltid != null" >
+        hoteltId = #{hoteltid,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hotelname != null" >
+        hotelName = #{hotelname,jdbcType=INTEGER},
+      </if>
+      <if test="roomprice != null" >
+        roomPrice = #{roomprice,jdbcType=DECIMAL},
+      </if>
+      <if test="roomnum != null" >
+        roomNum = #{roomnum,jdbcType=INTEGER},
+      </if>
+      <if test="orderid != null" >
+        orderId = #{orderid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hckz.entity.Orderitem" >
+    update orderitem
+    set hoteltId = #{hoteltid,jdbcType=TIMESTAMP},
+      hotelName = #{hotelname,jdbcType=INTEGER},
+      roomPrice = #{roomprice,jdbcType=DECIMAL},
+      roomNum = #{roomnum,jdbcType=INTEGER},
+      orderId = #{orderid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

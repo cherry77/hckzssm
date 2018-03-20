@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hckz.dao.HoteldetailsMapper" >
+  <resultMap id="BaseResultMap" type="com.hckz.entity.Hoteldetails" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="hotelid" property="hotelid" jdbcType="INTEGER" />
+    <result column="hotelType" property="hoteltype" jdbcType="VARCHAR" />
+    <result column="imgurl" property="imgurl" jdbcType="VARCHAR" />
+    <result column="imgtype" property="imgtype" jdbcType="INTEGER" />
+    <result column="hotelIntroduce" property="hotelintroduce" jdbcType="VARCHAR" />
+    
+    <association property="hotel" javaType="com.hckz.entity.Hotel" >
+    	<id column="hotelId" property="hotelid"  />
+	    <result column="hotelName" property="hotelname"  />
+	    <result column="hotelPhone" property="hotelphone"  />
+	    <result column="hotelPosition" property="hotelposition"  />
+	    <result column="hotelImgurl" property="hotelimgurl"  />
+	    <result column="lowPrice" property="lowprice"  />
+	    <result column="positionId" property="positionid"  />
+    </association>
+  </resultMap> 
+ 
+  <sql id="Base_Column_List" >
+    id, hotelid, hotelType, imgurl, imgtype, hotelIntroduce
+  </sql>
+
+   <!--  多对一联合查询 -->
+  
+  <select id="findHotelDetails" resultMap="BaseResultMap" >
+    select 
+    h.hotelid,
+    hd.imgurl, 
+    hd.imgtype, 
+    hd.hotelIntroduce,
+    h.hotelName,
+    h.hotelPhone,
+    h.hotelPosition,
+    h.lowPrice,
+    h.positionId
+    from hoteldetails as hd,hotel as  h
+    where hd.hotelid=h.hotelId and  h.hotelid = #{0}
+  </select> 
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from hoteldetails
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from hoteldetails
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hckz.entity.Hoteldetails" >
+    insert into hoteldetails (id, hotelid, hotelType, 
+      imgurl, imgtype, hotelIntroduce
+      )
+    values (#{id,jdbcType=INTEGER}, #{hotelid,jdbcType=INTEGER}, #{hoteltype,jdbcType=VARCHAR}, 
+      #{imgurl,jdbcType=VARCHAR}, #{imgtype,jdbcType=INTEGER}, #{hotelintroduce,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hckz.entity.Hoteldetails" >
+    insert into hoteldetails
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="hotelid != null" >
+        hotelid,
+      </if>
+      <if test="hoteltype != null" >
+        hotelType,
+      </if>
+      <if test="imgurl != null" >
+        imgurl,
+      </if>
+      <if test="imgtype != null" >
+        imgtype,
+      </if>
+      <if test="hotelintroduce != null" >
+        hotelIntroduce,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="hotelid != null" >
+        #{hotelid,jdbcType=INTEGER},
+      </if>
+      <if test="hoteltype != null" >
+        #{hoteltype,jdbcType=VARCHAR},
+      </if>
+      <if test="imgurl != null" >
+        #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="imgtype != null" >
+        #{imgtype,jdbcType=INTEGER},
+      </if>
+      <if test="hotelintroduce != null" >
+        #{hotelintroduce,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hckz.entity.Hoteldetails" >
+    update hoteldetails
+    <set >
+      <if test="hotelid != null" >
+        hotelid = #{hotelid,jdbcType=INTEGER},
+      </if>
+      <if test="hoteltype != null" >
+        hotelType = #{hoteltype,jdbcType=VARCHAR},
+      </if>
+      <if test="imgurl != null" >
+        imgurl = #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="imgtype != null" >
+        imgtype = #{imgtype,jdbcType=INTEGER},
+      </if>
+      <if test="hotelintroduce != null" >
+        hotelIntroduce = #{hotelintroduce,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hckz.entity.Hoteldetails" >
+    update hoteldetails
+    set hotelid = #{hotelid,jdbcType=INTEGER},
+      hotelType = #{hoteltype,jdbcType=VARCHAR},
+      imgurl = #{imgurl,jdbcType=VARCHAR},
+      imgtype = #{imgtype,jdbcType=INTEGER},
+      hotelIntroduce = #{hotelintroduce,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

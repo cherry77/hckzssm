@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hckz.dao.CustomerMapper" >
+  <resultMap id="BaseResultMap" type="com.hckz.entity.Customer" >
+    <id column="customerId" property="customerid" jdbcType="INTEGER" />
+    <result column="customerName" property="customername" jdbcType="VARCHAR" />
+    <result column="customerPassword" property="customerpassword" jdbcType="VARCHAR" />
+    <result column="customerPhone" property="customerphone" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    customerId, customerName, customerPassword, customerPhone
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer
+    where customerId = #{customerid,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectByPhone" resultMap="BaseResultMap" parameterType="String" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer
+    where customerPhone = #{customerphone,jdbcType=VARCHAR}
+  </select>
+  
+  
+   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from customer
+    where customerId = #{customerid,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" parameterType="com.hckz.entity.Customer" >
+    insert into customer (customerId, customerName, customerPassword, customerPhone)
+    values (#{customerid,jdbcType=INTEGER}, #{customername,jdbcType=VARCHAR}, #{customerpassword,jdbcType=VARCHAR}, 
+      #{customerphone,jdbcType=VARCHAR})
+  </insert> 
+  <insert id="insertSelective" parameterType="com.hckz.entity.Customer" >
+    insert into customer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="customerid != null" >
+        customerId,
+      </if>
+      <if test="customername != null" >
+        customerName,
+      </if>
+      <if test="customerpassword != null" >
+        customerPassword,
+      </if>
+      <if test="customerphone != null" >
+        customerPhone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="customerid != null" >
+        #{customerid,jdbcType=INTEGER},
+      </if>
+      <if test="customername != null" >
+        #{customername,jdbcType=VARCHAR},
+      </if>
+      <if test="customerpassword != null" >
+        #{customerpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="customerphone != null" >
+        #{customerphone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hckz.entity.Customer" >
+    update customer
+    <set >
+      <if test="customername != null" >
+        customerName = #{customername,jdbcType=VARCHAR},
+      </if>
+      <if test="customerpassword != null" >
+        customerPassword = #{customerpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="customerphone != null" >
+        customerPhone = #{customerphone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where customerId = #{customerid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hckz.entity.Customer" >
+    update customer
+    set customerName = #{customername,jdbcType=VARCHAR},
+      customerPassword = #{customerpassword,jdbcType=VARCHAR},
+      customerPhone = #{customerphone,jdbcType=VARCHAR}
+    where customerId = #{customerid,jdbcType=INTEGER}
+  </update>
+</mapper>
